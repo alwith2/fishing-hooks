@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { Component, useState } from 'react';
 import './App.css';
+import Header from './Header';
+import Body from './Body';
 
-function App() {
+
+ function App(props) {
+   const [menuState, setMenuState] = useState(0);
+   const changeMenu = (newMenu) => {
+     console.log("in changeMenu", newMenu);
+
+   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+      <>
+        <Header changeMenu = {changeMenu} menuState = {menuState} />
+        <Body />
+      </>
+
+
+    )
+  }
+
+  export default App;
